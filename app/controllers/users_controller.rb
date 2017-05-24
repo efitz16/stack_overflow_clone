@@ -22,6 +22,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+
+    if @user
+      # render 'show'
+      # query for questions
+    else
+      redirect_to root_url
+    end
   end
 
   private
