@@ -1,0 +1,25 @@
+<div id="user_form">
+  <%= form_for(@user) do |f| %>
+    <div>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <div>
+    	<%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+    <div>
+    	<%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div>
+    	<%= f.submit "Submit", :disable_with => 'Submitting...' %>
+    </div>
+  <% end %>
+</div>
