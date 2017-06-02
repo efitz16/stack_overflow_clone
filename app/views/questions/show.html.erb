@@ -3,3 +3,16 @@
 
 
 <p><%= @question.body %></p>
+
+<div>
+  <h4>Answers</h4>
+  <% if !@answers.empty? %>
+    <% @answers.each do |answer| %>
+      <p><%= answer.body %></p>
+      <p>Answered by: <%= answer.user.username %></p>
+    <% end %>
+  <% end %>
+</div>
+
+
+<%= link_to "Answer this question", new_question_answer_path(@question) %>
