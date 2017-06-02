@@ -1,0 +1,21 @@
+<h1>Create a question</h1>
+  <div class="errors" id="new-question-errors">
+    <% if @errors %>
+      <% @errors.each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+  </div>
+<%= form_for(@question) do |f| %>
+  <div>
+	  <%= f.label :title %>
+	  <%= f.text_field :title  %>
+  </div>
+  <div>
+  	<%= f.label :body %>
+  	<%= f.text_area :body %>
+  </div>
+  <div>
+  	<%= f.submit %>
+  </div>
+<% end %>
