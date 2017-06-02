@@ -1,8 +1,5 @@
-require 'pry'
-
 class QuestionsController < ApplicationController
   include SessionsHelper
-
   before_action :login_redirect, only: [:new, :create]
   before_action :question_ownership, only: [:edit, :update, :delete]
 
@@ -11,6 +8,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by(id: params[:id])
+    @answers = @question.answers
 
     @errors = "Sorry, not found" if !!@question
   end

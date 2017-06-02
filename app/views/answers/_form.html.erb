@@ -1,0 +1,16 @@
+<div class="errors" id="answer-errors">
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+</div>
+<%= form_for([@question, @answer]) do |f| %>
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body, :required => true %>
+  </div>
+  <div>
+  	<%= f.submit %>
+  </div>
+<% end %>
